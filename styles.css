@@ -60,3 +60,19 @@ main {
   border-radius: 25px;
   padding: 15px;
 }
+
+#stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#stats-table {
+  text-align: center;
+  width: 100%;
+}
+
+tr, td {
+  background-color: #8a00c2;
+  color: white;
+}
