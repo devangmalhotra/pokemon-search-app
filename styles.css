@@ -25,10 +25,17 @@
   }
 
   #input-display-container {
-    background: lightgray;
+    background: rgb(243, 243, 243);
+    padding: 20px;
   }
 
   #input-display-container label {
     color: black;
   }
   
+  #input-search-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
