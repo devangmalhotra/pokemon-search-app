@@ -24,6 +24,11 @@ main {
   gap: 50px;
 }
 
+#main-container {
+  background: rgb(243, 243, 243);
+  color: black;
+}
+
 #input-container {
   background: rgb(243, 243, 243);
   padding: 20px;
