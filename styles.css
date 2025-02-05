@@ -15,13 +15,20 @@
     overflow:visible;
   }
 
-  main, #title-div {
+  main {
     height: 100%;
-  }
-
-  #title-div {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  #input-display-container {
+    background: lightgray;
+  }
+
+  #input-display-container label {
+    color: black;
   }
   
