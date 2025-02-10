@@ -11,13 +11,14 @@ let pokemonDefense = document.getElementById("defense");
 let pokemonSpecialAttack = document.getElementById("special-attack");
 let pokemonSpecialDefense = document.getElementById("special-defense");
 let pokemonSpeed = document.getElementById("speed");
+let typesContainer = document.getElementById("types");
 
 const fetchData = async (nameOrId) => {
     let apiUrl = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${nameOrId.toLowerCase()}`;
     try {
         const res = await fetch(apiUrl);
         const data = await res.json();
-        console.log(data);
+        //console.log(data);
         updateDisplay(data);
       } catch (err) {
         console.log(err);
@@ -26,11 +27,19 @@ const fetchData = async (nameOrId) => {
 };
 
 const updateDisplay = (pokemonData) => {
+    console.log(pokemonData);
     pokemonName.innerHTML = pokemonData.name.toUpperCase();
     pokemonId.innerHTML = `#${pokemonData.id}`;
     pokemonWeight.innerHTML = `Weight: ${pokemonData.weight}`;
     pokemonHeight.innerHTML = `Height: ${pokemonData.height}`;
     pokemonImg.src = pokemonData.sprites.front_default;
+
+    typesContainer.innerHTML = "";
+    pokemonData.types.forEach(i => {
+        console.log(i.type.name);
+        typesContainer.innerHTML += `<span class="type ${i.type.name}">${i.type.name.toUpperCase()} </span>`
+    });
+
     pokemonHp.innerHTML = pokemonData.stats[0].base_stat;
     pokemonAttack.innerHTML = pokemonData.stats[1].base_stat;
     pokemonDefense.innerHTML = pokemonData.stats[2].base_stat;

@@ -32,6 +32,7 @@ main {
   background: rgb(243, 243, 243);
   color: black;
   border-radius: 20px;
+  min-height: 600px;
 }
 
 #input-container {
@@ -74,10 +75,11 @@ main {
 
 #output-container {
   padding: 20px;
+  min-height: 500px;
 }
 
 #display {
-  min-height: 200px;
+  min-height: 250px;
   margin-bottom: 20px;
 }
 
