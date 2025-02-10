@@ -1,4 +1,3 @@
-const apiurl = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon";
 let searchInput = document.getElementById("search-input");
 let searchButton = document.getElementById("search-button");
 let pokemonName = document.getElementById("pokemon-name");
@@ -14,6 +13,7 @@ let pokemonSpecialDefense = document.getElementById("special-defense");
 let pokemonSpeed = document.getElementById("speed");
 
 const fetchData = (nameOrId) => {
+    let apiurl = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${nameOrId}`;
     console.log(nameOrId);
     fetch(apiurl)
     .then(res => {
@@ -25,7 +25,7 @@ const fetchData = (nameOrId) => {
     })
 };
 
-searchButton.addEventListener(click, () => {
+searchButton.addEventListener('click', () => {
     fetchData(searchInput.value);
 });
 
