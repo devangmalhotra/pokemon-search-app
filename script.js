@@ -12,18 +12,20 @@ let pokemonSpecialAttack = document.getElementById("special-attack");
 let pokemonSpecialDefense = document.getElementById("special-defense");
 let pokemonSpeed = document.getElementById("speed");
 
-const fetchData = (nameOrId) => {
-    let apiurl = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${nameOrId}`;
-    console.log(nameOrId);
-    fetch(apiurl)
-    .then(res => {
-        if(!res.ok) {
-            alert("Pokémon not found");
-        } else {
-            console.log(res.json());
-        }
-    })
+const fetchData = async (nameOrId) => {
+    let apiUrl = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${nameOrId.toLowerCase()}`;
+    try {
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        console.log(data);
+      } catch (err) {
+        alert("Pokémon not found");
+      }
 };
+
+const updateDisplay = (pokemonData) => {
+    
+}
 
 searchButton.addEventListener('click', () => {
     fetchData(searchInput.value);
