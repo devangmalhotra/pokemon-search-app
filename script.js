@@ -28,8 +28,15 @@ const fetchData = async (nameOrId) => {
 const updateDisplay = (pokemonData) => {
     pokemonName.innerHTML = pokemonData.name.toUpperCase();
     pokemonId.innerHTML = `#${pokemonData.id}`;
-    pokemonWeight.innerHTML =  `Weight: ${pokemonData.weight}`;
-    pokemonHeight.innerHTML =  `Height: ${pokemonData.height}`;
+    pokemonWeight.innerHTML = `Weight: ${pokemonData.weight}`;
+    pokemonHeight.innerHTML = `Height: ${pokemonData.height}`;
+    pokemonImg.src = pokemonData.sprites.front_default;
+    pokemonHp.innerHTML = pokemonData.stats[0].base_stat;
+    pokemonAttack.innerHTML = pokemonData.stats[1].base_stat;
+    pokemonDefense.innerHTML = pokemonData.stats[2].base_stat;
+    pokemonSpecialAttack.innerHTML = pokemonData.stats[3].base_stat;
+    pokemonSpecialDefense.innerHTML = pokemonData.stats[4].base_stat;
+    pokemonSpeed.innerHTML = pokemonData.stats[5].base_stat;
 }
 
 searchButton.addEventListener('click', () => {
