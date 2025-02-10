@@ -4,7 +4,7 @@ let pokemonName = document.getElementById("pokemon-name");
 let pokemonId = document.getElementById("pokemon-id");
 let pokemonWeight = document.getElementById("weight");
 let pokemonHeight = document.getElementById("height");
-let imgContainer = document.getElementById("img-container");
+let pokemonImg = document.getElementById("sprite");
 let pokemonHp = document.getElementById("hp");
 let pokemonAttack = document.getElementById("attack");
 let pokemonDefense = document.getElementById("defense");
@@ -18,13 +18,18 @@ const fetchData = async (nameOrId) => {
         const res = await fetch(apiUrl);
         const data = await res.json();
         console.log(data);
+        updateDisplay(data);
       } catch (err) {
+        console.log(err);
         alert("Pokémon not found");
       }
 };
 
 const updateDisplay = (pokemonData) => {
-    
+    pokemonName.innerHTML = pokemonData.name.toUpperCase();
+    pokemonId.innerHTML = `#${pokemonData.id}`;
+    pokemonWeight.innerHTML =  `Weight: ${pokemonData.weight}`;
+    pokemonHeight.innerHTML =  `Height: ${pokemonData.height}`;
 }
 
 searchButton.addEventListener('click', () => {
