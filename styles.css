@@ -67,6 +67,11 @@ main {
   padding: 15px;
 }
 
+#search-button:hover {
+    cursor: pointer;
+    background-color: #480065;
+}
+
 #output-container {
   padding: 20px;
 }
